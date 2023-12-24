@@ -68,6 +68,8 @@ spline: data
 
 多级表头中的固定列，必须指定每一个固定列的 `colKey` 和 `fixed` 属性。
 
+⚠️ Windows 操作系统横向滚动操作：按下 Shift 键的同时，鼠标操作滚轮进行滚动。纵向滚动操作：直接鼠标操作滚轮进行滚动。
+
 {{ fixed-column }}
 
 ### 固定表头和列的表格
@@ -200,7 +202,7 @@ spline: data
 
 在涉及到表单选择、或批量操作场景中，可在数据行前直接单选或多选操作对象。
 
-#### 单选
+#### 示例一：单选(Radio)
 
 - `selectedRowKeys` 表示当前选中行的唯一标识数组，支持非受控属性 `defaultSelectedRowKeys`
 - `onSelectChange` 会在选中行发生变化时触发
@@ -208,7 +210,7 @@ spline: data
 
 {{ select-single }}
 
-#### 多选
+#### 示例二：多选(Checkbox)
 
 - `selectedRowKeys` 表示当前选中行的唯一标识数组，支持非受控属性 `defaultSelectedRowKeys`
 - `onSelectChange` 会在选中行发生变化时触发
@@ -217,6 +219,12 @@ spline: data
 - 注意：如果发现点击某一行便选中了全部，说明 `rowKey` 设置不正确，或者没有设置，请确保 `rowKey` 的值为 `data` 中的字段。
 
 {{ select-multiple }}
+
+#### 示例三：没有操作列的行选中
+
+不带操作列的行选中表格，一般用于一些简要选择场景，通过点击行直接选中。可以通过 `rowSelectionType: 'single' | 'multiple'` 控制单选或多选。
+
+{{ select-without-handler }}
 
 ### 可分页的表格
 
